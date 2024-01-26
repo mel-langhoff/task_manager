@@ -11,9 +11,17 @@ class TasksController < ApplicationController
             title: params[:title],
             description: params[:description]
         })
-        binding.pry
+
         task.save
-        binding.pry
+
         redirect_to "/tasks"
+    end
+
+    def show
+        @task = Task.find(params[:id])
+    end
+
+    def edit
+        @task = Task.find(params[:id])
     end
 end
