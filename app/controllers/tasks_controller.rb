@@ -28,9 +28,9 @@ class TasksController < ApplicationController
     def update
         task = Task.find(params[:id])
         task.update({
-            title: params[:title],
-            description: params[:description]
-            })
+          title: params[:title],
+          description: params[:description]
+          })
         task.save
         redirect_to "/tasks/#{task.id}"
     end
